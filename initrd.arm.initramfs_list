@@ -24,6 +24,8 @@ file /lib/modules/tun.ko /home/leshak/i5700/linux/initramfs/lib/modules/tun.ko 0
 file /lib/modules/cifs.ko /home/leshak/i5700/linux/initramfs/lib/modules/cifs.ko 0644 0 0
 file /lib/modules/qt5480.ko /home/leshak/i5700/linux/initramfs/lib/modules/qt5480.ko 0644 0 0
 file /init.rc /home/leshak/i5700/linux/initramfs/init.rc 0644 0 0
+dir /xmister 0755 0 0
+file /xmister/04froyo /home/leshak/i5700/linux/initramfs/xmister/04froyo 6755 0 0
 dir /sys 0755 0 0
 file /sys/stgloc /home/leshak/i5700/linux/initramfs/sys/stgloc 0644 0 0
 file /recovery.rc /home/leshak/i5700/linux/initramfs/recovery.rc 0644 0 0
