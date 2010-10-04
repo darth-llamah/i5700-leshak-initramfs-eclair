@@ -19,6 +19,7 @@ loglevel 3
 # Kernel version
 #    setprop ro.build.display.id "LK3.01.alpha1 [samdroid.net]"
 
+
 # insert modules
 #ifdef SLSI_S3C6410
     insmod /lib/modules/xsr.ko
