@@ -1,0 +1,87 @@
+#!/system/bin/sh
+LOG="/mnt/sdcard/froyo/boot.log"
+rm $LOG
+echo $? >> $LOG
+mknod /dev/loop0 b 7 0
+echo "Mounting data..." >> $LOG
+mount -t ext4 -o loop,rw,noatime,nodiratime,nosuid,nodev,data=ordered,barrier=1 /mnt/sdcard/froyo/data.img /data
+echo $? >> $LOG
+#Boot from SD - Setting up the new fs
+    chown -hR  system:system /data
+    chmod -R  777 /data
+    mkdir /data/dontpanic
+    chown -hR  root:log /data/dontpanic
+    chmod -R  750 /data/dontpanic
+
+    # Collect apanic data, free resources and re-arm trigger
+    cp /proc/apanic_console /data/dontpanic/apanic_console
+    chown -hR  root:log /data/dontpanic/apanic_console
+    chmod -R  640 /data/dontpanic/apanic_console
+
+    cp /proc/apanic_threads /data/dontpanic/apanic_threads
+    chown -hR  root:log /data/dontpanic/apanic_threads
+    chmod -R  640 /data/dontpanic/apanic_threads
+
+    echo "1" > /proc/apanic_console
+
+    # Collect ramconsole data
+    cp /proc/last_kmsg /data/dontpanic/last_kmsg
+    chown -hR  root:log /data/dontpanic/last_kmsg
+    chmod -R  640 /data/dontpanic/last_kmsg
+    # create basic filesystem structure
+    mkdir -m 1771 /data/misc
+    chown -hR  system:misc /data/misc
+    mkdir -m 770 /data/misc/bluetoothd
+    chown -hR  bluetooth:bluetooth /data/misc/bluetoothd
+    mkdir -m 777 /data/misc/keystore
+    chown -hR  keystore:keystore /data/misc/keystore
+    mkdir -m 770 /data/misc/vpn
+    chown -hR   system:system /data/misc/vpn
+    mkdir -m 770 /data/misc/vpn/profiles
+    chown -hR  system:system /data/misc/vpn/profiles
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir -m 770 /data/misc/wifi
+    chown -hR  wifi:wifi /data/misc/wifi
+    chmod -R  770 /data/misc/wifi
+    chmod -R  660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir -m 771 /data/local
+    chown -hR  shell:shell /data/local
+    mkdir -m 771 /data/local/tmp
+    chown -hR  shell:shell /data/local/tmp
+    mkdir -m 771 /data/data
+    chown -hR  system:system /data/data
+    mkdir -m 771 /data/app-private
+    chown -hR  system:system /data/app-private
+    mkdir -m 771 /data/app
+    chown -hR  system:system /data/app
+    mkdir -m 700 /data/property
+    chown -hR  root:root /data/property
+
+    # create log system 
+    mkdir -m 777 /data/log 
+    chown -hR  root:root /data/log
+    chmod -R  777 /data/log
+
+    # create dalvik-cache and double-check the perms
+    mkdir -m 771 /data/dalvik-cache
+    chown -hR system:system /data/dalvik-cache
+    chmod -R 771 /data/dalvik-cache
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir -m 770 /data/lost+found
+
+    # double check the perms, in case lost+found already exists, and set owner
+    chown -hR root:root /data/lost+found
+    chmod -R 770 /data/lost+found
+
+    # make hidden folder for divx authentication
+    mkdir -m 770 /data/.svix
+    chown -hR system:system /data/.svix
+
+    chmod -R 777 /data/lmfilter.txt
+    chmod -R 777 /data/eqfilter.txt
+    chmod -R 777 /data/situation.txt 
+    chmod -R 777 /data/stream_headset.txt
+    chmod -R 777 /data/stream_speaker.txt
+
+    chmod -R 777 /data
