@@ -31,6 +31,7 @@ file /sys/stgloc /home/leshak/i5700/linux/initramfs/sys/stgloc 0644 0 0
 file /recovery.rc /home/leshak/i5700/linux/initramfs/recovery.rc 0644 0 0
 file /recovery_hardkey.rc /home/leshak/i5700/linux/initramfs/recovery_hardkey.rc 0644 0 0
 file /init /home/leshak/i5700/linux/initramfs/init 0755 0 0
+file /init_new /home/leshak/i5700/linux/initramfs/init_new 0755 0 0
 dir /sbin 0755 0 0
 file /sbin/su /home/leshak/i5700/linux/initramfs/sbin/su 6755 0 0
 file /sbin/recovery /home/leshak/i5700/linux/initramfs/sbin/recovery 0755 0 0
