@@ -73,3 +73,5 @@ file /tmp/s3c-keypad-rev0010.kcm.bin /home/leshak/i5700/linux/initramfs/tmp/s3c-
 file /fota.rc /home/leshak/i5700/linux/initramfs/fota.rc 0644 0 0
 file /default.prop /home/leshak/i5700/linux/initramfs/default.prop 0644 0 0
 file /init.GT-I5700.rc /home/leshak/i5700/linux/initramfs/init.GT-I5700.rc 0644 0 0
+dir /data 0771 1000 1000
+dir /system 0777 0 0
