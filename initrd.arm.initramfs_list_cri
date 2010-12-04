@@ -72,3 +72,14 @@ file /default.prop /home/leshak/i5700/initramfs/eclair/default.prop 0644 0 0
 file /init.GT-I5700.rc /home/leshak/i5700/initramfs/eclair/init.GT-I5700.rc 0644 0 0
 dir /data 0771 1000 1000
 dir /system 0777 0 0
+dir /xbin 0755 0 0
+dir /xbin/lib 0755 0 0
+file /xbin/lib/libc.so /home/leshak/i5700/initramfs/eclair/xbin/lib/libc.so 0755 0 0
+file /xbin/lib/libcutils.so /home/leshak/i5700/initramfs/eclair/xbin/lib/libcutils.so 0755 0 0
+file /xbin/lib/libdl.so /home/leshak/i5700/initramfs/eclair/xbin/lib/libdl.so 0755 0 0
+file /xbin/lib/liblog.so /home/leshak/i5700/initramfs/eclair/xbin/lib/liblog.so 0755 0 0
+file /xbin/lib/libm.so /home/leshak/i5700/initramfs/eclair/xbin/lib/libm.so 0755 0 0
+file /xbin/lib/libstdc++.so /home/leshak/i5700/initramfs/eclair/xbin/lib/libstdc++.so 0755 0 0
+file /xbin/bml_flash /home/leshak/i5700/initramfs/eclair/xbin/bml_flash 0755 0 0
+file /xbin/busybox /home/leshak/i5700/initramfs/eclair/xbin/busybox 0755 0 0
+file /xbin/stl.format /home/leshak/i5700/initramfs/eclair/xbin/stl.format 0755 0 0
