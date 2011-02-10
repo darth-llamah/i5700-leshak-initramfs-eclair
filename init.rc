@@ -20,7 +20,7 @@ loglevel 3
     symlink /sys/kernel/debug /d
 
 # Kernel version
-    setprop ro.kernel.display.id "FrankenKernel 0.1"
+    setprop ro.kernel.display.id "FrankenKernel 0.1.5"
 
 # insert modules
 #ifdef SLSI_S3C6410
@@ -111,17 +111,11 @@ loglevel 3
     #Dynamic Soundfix (For compatibility to the old place)
     exec /xbin/busybox sh -c "cat /system/xmister/soundfix > /proc/xmister/soundfix"
 
-    #Dynamic Undervolt (For compatibility to the old place)
-    exec /xbin/busybox sh -c "cat /system/xmister/undervolt > /proc/xmister/undervolt"
-
     #Dynamic Audio Buffer (For compatibility to the old place)
     exec /xbin/busybox sh -c "cat /system/xmister/buffer > /proc/xmister/buffer"
 
     #Dynamic Soundfix
     exec /xbin/busybox sh -c "cat /data/misc/xmister/soundfix > /proc/xmister/soundfix"
-
-    #Dynamic Undervolt
-    exec /xbin/busybox sh -c "cat /data/misc/xmister/undervolt > /proc/xmister/undervolt"
 
     #Dynamic Audio Buffer
     exec /xbin/busybox sh -c "cat /data/misc/xmister/buffer > /proc/xmister/buffer"

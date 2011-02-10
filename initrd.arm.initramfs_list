@@ -18,7 +18,7 @@ file /lib/modules/vibrator.ko /home/matus/i5700/initramfs/lib/modules/vibrator.k
 file /lib/modules/bnep.ko /home/matus/i5700/initramfs/lib/modules/bnep.ko 0644 0 0
 file /lib/modules/tun.ko /home/matus/i5700/initramfs/lib/modules/tun.ko 0644 0 0
 file /lib/modules/cifs.ko /home/matus/i5700/initramfs/lib/modules/cifs.ko 0644 0 0
-file /lib/modules/qt5480.ko /home/matus/i5700/initramfs/lib/modules/qt5480.ko 0644 0 0
+#file /lib/modules/qt5480.ko /home/matus/i5700/initramfs/lib/modules/qt5480.ko 0644 0 0
 file /lib/modules/rfs.ko /home/matus/i5700/initramfs/lib/modules/rfs.ko 0644 0 0
 file /lib/modules/xsr_stl.ko /home/matus/i5700/initramfs/lib/modules/xsr_stl.ko 0644 0 0
 file /lib/modules/xsr.ko /home/matus/i5700/initramfs/lib/modules/xsr.ko 0644 0 0
